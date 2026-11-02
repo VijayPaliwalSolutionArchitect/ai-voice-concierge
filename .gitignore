@@ -1,0 +1,69 @@
+# ───────────────────────────────────────────────────────────────
+# ai-voice-concierge — SHIVAM ITCS
+# Public devotional voice concierge (reserved — no source yet)
+#
+# This .gitignore is prepared so that when the repository is
+# populated, the first thing a contributor does NOT do is commit
+# secrets, build artefacts, or OS junk. It covers the stacks the
+# project is likely to use (Node/TypeScript, Python) without
+# assuming one over the other.
+# ───────────────────────────────────────────────────────────────
+
+# ── Dependencies ───────────────────────────────────────────────
+node_modules/
+__pycache__/
+*.pyc
+.venv/
+venv/
+env/
+.Python
+
+# ── Build artefacts ────────────────────────────────────────────
+dist/
+build/
+out/
+*.egg-info/
+*.egg
+.coverage
+htmlcov/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.tsbuildinfo
+
+# ── Secrets and environment ────────────────────────────────────
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+*.p12
+*.pfx
+credentials.json
+service-account*.json
+secrets.json
+
+# ── OS / editor ─────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# ── Voice / audio pipeline scratch ──────────────────────────────
+# TTS and STT runs generate temp audio; these are not source.
+assets/generated/
+assets/cache/
+*.mp3
+*.wav
+*.ogg
+*.m4a
+*.flac
+!assets/voice-samples/**/*   # committed sample answers stay
+
+# ── Logs ────────────────────────────────────────────────────────
+*.log
+logs/
